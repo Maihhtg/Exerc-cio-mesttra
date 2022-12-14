@@ -1,0 +1,260 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner teclado = new Scanner(System.in);
+	    
+	    float compra1V = 0; 
+	    float compra2V = 0;
+	    float compra3V = 0; 
+	    float compra4V = 0; 
+	    float compra5V = 0;
+	    int resposta = 0;
+	    float pagVista = 0;
+	    float pagParcelado = 0;
+	    float tDescontos = 0;
+	    float tJuros = 0;
+
+        ///Qualquer outro código: Opção inválida///
+	    System.out.println("Código Classificação");
+	    System.out.println("1 - À vista, com 8% de desconto");
+	    System.out.println("2 - À vista no cartão, 4% de desconto");
+	    System.out.println("3 - Em 2x, preço normal sem juros");
+	    System.out.println("4 - Em 4x, preço acrescido de 8%\n");
+	    
+
+	    ///COMPRA 01///
+        System.out.println("Compra 01");
+        System.out.print("Digite o valor total: R$ ");
+        compra1V = teclado.nextFloat();
+        
+        System.out.print("Digite a forma de pagamento: ");
+        resposta = teclado.nextInt();
+        
+        if (resposta == 1){
+            System.out.println("Desconto de 8%");
+            float desconto1 = 0;
+            desconto1 = (compra1V * 0.08f);
+            float descontoFinal1 = (compra1V - desconto1);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal1);
+            pagVista += descontoFinal1;
+            tDescontos += desconto1;
+            
+            ///descontoP = desconto da compra parcelada///
+	    } else if (resposta == 2){
+	        System.out.println("Desconto de 4%");
+            float desconto2 = 0;
+            desconto2 = (compra1V * 0.04f);
+            float descontoFinalP2 = (compra1V - desconto2);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinalP2);
+            pagVista += descontoFinalP2;
+            tDescontos += desconto2;
+            
+	    } else if (resposta == 3){
+	        System.out.printf("Em 2x de R$%.2f ", (compra1V / 2));
+	        System.out.printf("\nValor Final: R$%.2f ", compra1V);
+	        pagParcelado += compra1V;
+	        
+	    } else if (resposta == 4){
+	        float acréscimo8pc = (compra1V * 0.08f);
+	        float novoValorCompra1V = compra1V + acréscimo8pc;
+	        System.out.printf("Em 4x de R$%.2f ", (novoValorCompra1V/4));
+	        System.out.printf("\nValor Final: R$%.2f ", novoValorCompra1V);
+	        pagParcelado += novoValorCompra1V;
+	        tJuros += acréscimo8pc;
+	        
+	        
+	    } else{
+	        System.out.println("Opção inválida, o pagamento não será processado!");
+	    }
+	     
+	     
+        ///COMPRA 02///
+        System.out.println("\n");
+        System.out.println("Compra 02\n");
+        System.out.print("Digite o valor total: R$ ");
+        compra2V = teclado.nextFloat();
+        
+        System.out.print("Digite a forma de pagamento: ");
+        resposta = teclado.nextInt();
+        
+        if (resposta == 1){
+            System.out.println("Desconto de 8%");
+            float desconto01 = 0;
+            desconto01 = (compra2V * 0.08f);
+            float descontoFinal01 = (compra2V - desconto01);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal01);
+            pagVista += descontoFinal01;
+            tDescontos += desconto01;
+        
+	    } else if (resposta == 2){
+	        System.out.println("Desconto de 4%");
+            float desconto02 = 0;
+            pagParcelado = (compra2V * 0.04f);
+            float descontoFinalP02 = (compra2V - desconto02);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinalP02);
+            pagVista += descontoFinalP02;
+            tDescontos += desconto02;
+            
+	    } else if (resposta == 3){
+	        System.out.printf("Em 2x de R$%.2f ", (compra2V/2));
+	        System.out.printf("\nValor Final: R$%.2f ", compra2V);
+	        pagParcelado += compra2V;
+	        
+	    } else if (resposta == 4){
+	        float acréscimo8pc2 = (compra2V * 0.08f);
+	        float novoValorCompra2V = compra2V+ acréscimo8pc2;
+	        System.out.printf("Em 4x de R$%.2f ", (novoValorCompra2V / 4));
+	        System.out.printf("\nValor Final: R$%.2f ", novoValorCompra2V);
+	        pagParcelado += novoValorCompra2V;
+	        tJuros += acréscimo8pc2;
+	        
+	    } else{
+	        System.out.println("Opção inválida, o pagamento não será processado!");
+	    }
+        
+        
+        ///COMPRA 03///
+        System.out.println("\n");
+        System.out.println("Compra 03\n");
+        System.out.print("Digite o valor total: R$ ");
+        compra3V = teclado.nextFloat();
+        
+        System.out.print("Digite a forma de pagamento: ");
+        resposta = teclado.nextInt();
+        
+        if (resposta == 1){
+            System.out.println("Desconto de 8%");
+            float desconto001 = 0;
+            desconto001 = (compra3V * 0.08f);
+            float descontoFinal001 = (compra3V - desconto001);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal001);
+            pagVista += descontoFinal001;
+            tDescontos += desconto001;
+            
+	    } else if (resposta == 2){
+	        System.out.println("Desconto de 4%");
+            float desconto002 = 0;
+            desconto002 = (compra3V * 0.04f);
+            float descontoFinal002 = (compra3V - desconto002);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal002);
+            pagVista += descontoFinal002;
+            tDescontos += desconto002;
+            
+	    } else if (resposta == 3){
+	        System.out.printf("Em 2x de R$%.2f ", (compra3V/2));
+	        System.out.printf("\nValor Final: R$%.2f ", compra3V);
+	        pagParcelado += compra3V;
+	        
+	    } else if (resposta == 4){
+	        float acréscimo8pc3 = (compra3V * 0.08f);
+	        float novoValorCompra3V = compra3V + acréscimo8pc3;
+	        System.out.printf("Em 4x de R$%.2f ", (novoValorCompra3V / 4));
+	        System.out.printf("\nValor Final: R$%.2f ", novoValorCompra3V);
+	        pagParcelado += novoValorCompra3V;
+	        tJuros += acréscimo8pc3;
+	        
+	    } else{
+	        System.out.println("Opção inválida, o pagamento não será processado!");
+	    }
+        
+        
+        ///COMPRA 04///
+        System.out.println("\n");
+        System.out.println("Compra 04\n");
+        System.out.print("Digite o valor total: R$ ");
+        compra4V = teclado.nextFloat();
+        
+        System.out.print("Digite a forma de pagamento: ");
+        resposta = teclado.nextInt();
+        
+        if (resposta == 1){
+            System.out.println("Desconto de 8%");
+            float desconto0001 = 0;
+            desconto0001 = (compra4V * 0.08f);
+            float descontoFinal0001 = (compra4V - desconto0001);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal0001);
+            pagVista += descontoFinal0001;
+            tDescontos += desconto0001;
+            
+	    } else if (resposta == 2){
+	        System.out.println("Desconto de 4%");
+            float desconto0002 = 0;
+            desconto0002 = (compra4V * 0.04f);
+            float descontoFinal0002 = (compra4V - desconto0002);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal0002);
+            pagVista += descontoFinal0002;
+            tDescontos += desconto0002;
+            
+	    } else if (resposta == 3){
+	        System.out.printf("Em 2x de R$%.2f ", (compra4V/2));
+	        System.out.printf("\nValor Final: R$%.2f ", compra4V);
+	        pagParcelado += compra4V;
+	        
+	    } else if (resposta == 4){
+	        float acréscimo8pc4 = (compra4V * 0.08f);
+	        float novoValorCompra4V = compra4V + acréscimo8pc4;
+	        System.out.printf("Em 4x de R$%.2f ", (novoValorCompra4V / 4));
+	        System.out.printf("\nValor Final: R$ ", novoValorCompra4V);
+	        pagParcelado += novoValorCompra4V;
+	        tJuros += acréscimo8pc4;
+	        
+	    } else{
+	        System.out.println("Opção inválida, o pagamento não será processado!");
+	    }
+        
+        
+        ///COMPRA 05///
+        System.out.println("\n");
+        System.out.println("Compra 05\n");
+        System.out.print("Digite o valor total: R$ ");
+        compra5V = teclado.nextFloat();
+        
+        System.out.print("Digite a forma de pagamento: ");
+        resposta = teclado.nextInt();
+        
+        if (resposta == 1){
+            System.out.println("Desconto de 8%");
+            float desconto00001 = 0;
+            desconto00001 = (compra5V * 0.08f);
+            float descontoFinal00001 = (compra5V - desconto00001);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal00001);
+            pagVista += descontoFinal00001;
+            tDescontos += desconto00001;
+            
+	    } else if (resposta == 2){
+	        System.out.println("Desconto de 4%");
+            float desconto00002 = 0;
+            desconto00002 = (compra5V * 0.04f);
+            float descontoFinal00002= (compra5V - desconto00002);
+            System.out.printf("Valor Final: R$%.2f ", descontoFinal00002);
+            pagVista += descontoFinal00002;
+            tDescontos += desconto00002;
+            
+	    } else if (resposta == 3){
+	        System.out.printf("Em 2x de R$%.2f ", (compra5V / 2));
+	        System.out.printf("\nValor Final: R$%.2f ", compra5V);
+	        pagParcelado += compra5V;
+	        
+	    } else if (resposta == 4){
+	        float acréscimo8pc5 = (compra5V * 0.08f);
+	        float novoValorCompra5V = compra5V + acréscimo8pc5;
+	        System.out.printf("Em 4x de R$%.2f ", (novoValorCompra5V / 4));
+	        System.out.printf("\nValor Final: R$%.2f ", novoValorCompra5V);
+	        pagParcelado += novoValorCompra5V;
+	        tJuros += acréscimo8pc5;
+	        
+	    } else{
+	        System.out.println("Opção inválida, o pagamento nãlo será computado!");
+	    }
+       
+        System.out.printf("\n\nTotal de compras à vista: R$%.2f \n", pagVista);
+        System.out.printf("Total de compras parceladas: R$%.2f \n", pagParcelado);
+        
+        System.out.printf("Total de descontos: R$%.2f \n", tDescontos);
+        System.out.printf("Total de Juros: R$%.2f \n", tJuros);
+        
+    }
+
+}
