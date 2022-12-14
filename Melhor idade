@@ -1,0 +1,135 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner teclado = new Scanner(System.in);
+	    
+	    String nome1, nome2, nome3;
+	    String genero1, genero2, genero3; 
+	    int idade1, idade2, idade3;
+	    int Adulto = 0;
+	    int Idoso = 0;
+	    int Criança = 0;
+	    int Adolescente = 0;
+	    
+	    try{
+	    ///individuo 1
+	    System.out.print("Digite o nome do indivíduo 1: ");
+	    nome1 = teclado.nextLine();
+	    
+        System.out.print("Digite a idade de " + nome1 + ": ");
+        idade1 = teclado.nextInt();
+        if(idade1 < 0) {
+			throw new Exception("Idade não pode ser negativa");
+		}
+        
+        System.out.print("Digite o sexo de " + nome1 + ": ");
+        teclado.nextLine();
+        genero1 = teclado.nextLine(); 
+        
+        if (idade1 <= 12){
+            System.out.print(nome1 + " é criança.");
+            Criança++;
+        } else if (idade1 < 18){
+            System.out.print(nome1 + " é adolescente.");
+            Adolescente++;
+        } else if (idade1 > 60){
+            System.out.print(nome1 + " é da melhor idade.");  
+            Idoso++;
+        } else {
+            System.out.print(nome1 + " é adulto(a).");
+            Adulto++;
+        }
+        
+        
+        ///individuo 2
+	    System.out.print("\n\nDigite o nome do indivíduo 2: ");
+	    nome2 = teclado.nextLine();
+	    
+        System.out.print("Digite a idade de " + nome2 + ": ");
+        idade2 = teclado.nextInt();
+        if(idade2 < 0){
+			throw new Exception("Idade não pode ser negativa");
+		}
+        
+        System.out.print("Digite o sexo de " + nome2 + ": ");
+        teclado.nextLine();
+        genero2 = teclado.nextLine();
+        
+        if (idade2 <= 12){
+            System.out.print(nome2 + " é criança.");
+            Criança++;
+        } else if (idade2 < 18){
+            System.out.print(nome2 + " é adolescente."); 
+            Adolescente++;
+        } else if (idade2 > 60){
+            System.out.print(nome2 + " é da melhor idade.");
+            Idoso++;
+        } else {
+            System.out.print(nome2 + " é adulto(a).");
+            Adulto++;
+        }
+        
+        ///individuo 3
+	    System.out.print("\n\nDigite o nome do indivíduo 3: ");
+	    nome3 = teclado.nextLine();
+	    
+        System.out.print("Digite a idade de " + nome3 + ": ");
+        idade3 = teclado.nextInt();
+        if(idade3 < 0) {
+			throw new Exception("Idade não pode ser negativa");
+		}
+        
+        System.out.print("Digite o sexo de " + nome3 + ": ");
+        teclado.nextLine();
+        genero3 = teclado.nextLine();
+        
+        if (idade3 <= 12){
+            System.out.print(nome3 + " é criança.");
+            Criança++;
+        } else if (idade3 < 18){
+            System.out.print(nome3 + " é adolescente."); 
+            Adolescente++;
+        } else if (idade3 > 60){
+            System.out.print(nome3 + " é da melhor idade.");  
+            Idoso++;
+        } else {
+            System.out.print(nome3 + " é adulto(a).");
+            Adulto++;
+        }
+        
+        System.out.println("\n\nTotal de crianças: " + Criança);
+        System.out.println("Total de adolescentes: " + Adolescente);
+        System.out.println("Total de adultos: " + Adulto);
+        System.out.println("Total de melhor idade: " + Idoso);
+        System.out.println();
+        
+        if (idade3 > idade1){
+            System.out.println("O nome do indivíduo mais velho é: " + nome3);
+        } else if (idade3 > idade2){
+            System.out.println("O nome do indivíduo mais velho é: " + nome3); 
+        } else if (idade2 > idade1){
+            System.out.println("O nome do indivíduo mais velho é: " + nome2);    
+        } else if (idade2 > idade3){
+            System.out.println("O nome do indivíduo mais velho é: " + nome2);
+        } else if (idade1 > idade2){
+            System.out.println("O nome do indivíduo mais velho é: " + nome1);    
+        } else if (idade1 > idade3){
+            System.out.println("O nome do indivíduo mais velho é: " + nome1);
+        }
+         
+         
+	} catch(InputMismatchException e) {
+		System.out.println("Por favor, digite um número inteiro.");
+			
+	}catch(Exception e) {
+		System.out.println(e.getMessage());
+	}  
+	
+	
+    }    
+
+}
